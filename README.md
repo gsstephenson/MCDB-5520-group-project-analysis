@@ -1,7 +1,7 @@
 # MCDB-5520 Trio Variant Analysis: De Novo Variants + AI Functional Validation
 
-**Analysis:** [Your Name]  
-**Write-up:** [Collaborator Name]  
+**Analysis:** George Stephenson  
+**Write-up:** Altaf  
 **Date:** November 2025
 
 ---
@@ -161,23 +161,24 @@ All 6 likely pathogenic variants are intronic/splice-region:
 
 ---
 
-## For Your Write-Up
+## For Altaf's Write-Up
 
-### Methods
-- BCFtools: `isec -n=1` on ClinVar-annotated chr1 variants
-- AlphaGenome: Multimodal predictions (RNA/splicing/chromatin), 1 Mbp windows
-- Thresholds: Splice Δ >0.08 OR chromatin >0.5 = likely pathogenic
+### Methods (What I Did)
+- BCFtools: `isec -n=1` on ClinVar-annotated chr1 variants to find de novo candidates
+- AlphaGenome: Multimodal AI predictions (RNA/splicing/chromatin), 1 Mbp windows
+- Classification thresholds: Splice Δ >0.08 OR chromatin >0.5 = likely pathogenic
 
-### Results
-- 70 de novo candidates (3 with pathogenic/conflicting ClinVar)
-- 55/70 validated: 6 likely pathogenic, 11 benign, 38 uncertain
-- 5 ClinVar-benign variants show strong functional impact
+### Results (What I Found)
+- 70 de novo candidates (3 with pathogenic/conflicting ClinVar annotations)
+- 55/70 successfully validated: 6 likely pathogenic, 11 benign, 38 uncertain
+- 5 ClinVar-benign variants show strong functional impact (potential misclassifications)
 
-### Discussion Points
-- **ClinVar limitations:** Lacks RNA functional data for non-coding variants
-- **AI value:** Captures splicing/regulatory effects missed by standard tools
-- **Non-coding impact:** All 6 likely pathogenic are intronic/splice-region
-- **Clinical concern:** CASQ2 (cardiac death risk), TARDBP (ALS), FH (cancer)
+### Discussion Points (Key Findings)
+- **ClinVar limitations:** Database lacks RNA functional data for non-coding variants
+- **AI value:** AlphaGenome captures splicing/regulatory effects missed by standard annotation tools
+- **Non-coding impact:** All 6 likely pathogenic variants are intronic/splice-region (not protein-changing)
+- **Clinical concern:** Variants in CASQ2 (cardiac death risk), TARDBP (ALS), FH (cancer syndrome)
+- **Healthy phenotype paradox:** Study subjects are healthy despite pathogenic predictions → incomplete penetrance
 
 ### Files to Reference
 - `validation_summary.csv` - Main results table

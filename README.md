@@ -1,7 +1,6 @@
 # MCDB-5520 Trio Variant Analysis: De Novo Variants + AI Functional Validation
 
-**Analysis:** George Stephenson  
-**Write-up:** Altaf  
+**Analysis by:** George Stephenson  
 **Date:** November 2025
 
 ---
@@ -161,19 +160,19 @@ All 6 likely pathogenic variants are intronic/splice-region:
 
 ---
 
-## For Altaf's Write-Up
+## For Write-Up
 
-### Methods (What I Did)
+### Methods
 - BCFtools: `isec -n=1` on ClinVar-annotated chr1 variants to find de novo candidates
 - AlphaGenome: Multimodal AI predictions (RNA/splicing/chromatin), 1 Mbp windows
 - Classification thresholds: Splice Δ >0.08 OR chromatin >0.5 = likely pathogenic
 
-### Results (What I Found)
+### Results
 - 70 de novo candidates (3 with pathogenic/conflicting ClinVar annotations)
 - 55/70 successfully validated: 6 likely pathogenic, 11 benign, 38 uncertain
 - 5 ClinVar-benign variants show strong functional impact (potential misclassifications)
 
-### Discussion Points (Key Findings)
+### Discussion Points
 - **ClinVar limitations:** Database lacks RNA functional data for non-coding variants
 - **AI value:** AlphaGenome captures splicing/regulatory effects missed by standard annotation tools
 - **Non-coding impact:** All 6 likely pathogenic variants are intronic/splice-region (not protein-changing)

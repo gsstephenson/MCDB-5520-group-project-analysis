@@ -205,10 +205,11 @@ class AlphaGenomeVisualizer:
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
         
         # Top panel: Splice site probability changes
-        categories = ['Donor Site', 'Acceptor Site']
+        # Note: AlphaGenome returns combined splice junction data, not separate donor/acceptor
+        categories = ['Global Max', 'Local Max (near variant)']
         values = [
-            splice_data.get('max_donor_probability_change', 0),
-            splice_data.get('max_acceptor_probability_change', 0)
+            splice_data.get('max_splice_change', 0),
+            splice_data.get('local_max_splice_change', 0)
         ]
         
         colors = ['#E63946' if v > 0.1 else '#F77F00' if v > 0.05 else '#06A77D' for v in values]
@@ -428,8 +429,8 @@ class AlphaGenomeVisualizer:
             
             summary_text += (
                 f"\n─────────────────────────────────────────────────────────────────────────────────\n"
-                f"ClinVar Classification: {variant_info['clinvar_classification']}\n"
-                f"ClinVar Votes: {variant_info['clnsigconf']}\n"
+                f"ClinVar Classification: {variant_info.get('clinvar_classification', 'N/A')}\n"
+                f"ClinVar Votes: {variant_info.get('clnsigconf', 'N/A')}\n"
                 f"═══════════════════════════════════════════════════════════════════════════════\n"
             )
             

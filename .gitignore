@@ -1,13 +1,15 @@
-# Large VCF data files
-data/HG002_chr1/*.vcf
-data/HG002_chr1/*.vcf.gz
-data/HG002_chr1/*.tbi
-data/HG003_chr1/*.vcf
-data/HG003_chr1/*.vcf.gz
-data/HG003_chr1/*.tbi
-data/HG004_chr1/*.vcf
-data/HG004_chr1/*.vcf.gz
-data/HG004_chr1/*.tbi
+# Large VCF data files (31GB - do not commit!)
+data/
+
+# Large AlphaGenome prediction outputs
+alphagenome_validation/outputs/*.npz
+alphagenome_validation/visualizations/*.png
+
+# Keep these small files
+!alphagenome_validation/outputs/*.json
+!alphagenome_validation/outputs/*.csv
+!alphagenome_validation/outputs/*.sh
+!alphagenome_validation/outputs/*.md
 
 # Large output files
 *.nohup
@@ -17,3 +19,10 @@ alphagenome_validation/scripts/validation_run.log
 # Python cache
 __pycache__/
 *.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/

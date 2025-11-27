@@ -1,0 +1,31 @@
+{
+  "analysis_date": "2025-11-26T16:38:27.981305",
+  "num_variants": 10,
+  "genes": [
+    "FCGR2B",
+    "GBP1"
+  ],
+  "total_comparisons": 27714,
+  "context_window": "1,048,576 bp",
+  "output_types": [
+    "ATAC",
+    "CONTACT_MAPS",
+    "DNASE",
+    "CHIP_TF",
+    "CHIP_HISTONE",
+    "CAGE",
+    "PROCAP",
+    "RNA_SEQ",
+    "SPLICE_SITES",
+    "SPLICE_SITE_USAGE",
+    "SPLICE_JUNCTIONS"
+  ],
+  "num_tracks_per_variant": {
+    "FCGR2B_161506414": 4619,
+    "FCGR2B_161506415": 4619,
+    "FCGR2B_161509955": 4619,
+    "GBP1_89013380": 4619,
+    "GBP1_89013391": 4619,
+    "GBP1_89014075": 4619
+  }
+}

@@ -1,0 +1,11 @@
+VARIANT SIGNIFICANCE PIPELINE SUMMARY
+==================================================
+
+Total de novo candidates: 70
+In high-confidence regions: 36
+Benign: 63
+Uncertain significance (VUS): 2
+Pathogenic/Likely pathogenic: 0
+High-impact candidates: 19
+Already analyzed with AlphaGenome: 55
+Mean priority score: 2.9571428571428573
